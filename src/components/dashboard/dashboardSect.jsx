@@ -1,36 +1,36 @@
-import {useState} from "react";
+import { useState } from "react";
 import TradingViewWidget from "./LengthyAnalytics";
 import Analytics2 from "./Analytics2";
 import AnalyticsViewWidget from "./Analytics3";
 
-const DashboardSect = ({setWidgetState, currentUser, setInvestData}) => {
-    const currentDate = new Date();
+const DashboardSect = ({ setWidgetState, currentUser, setInvestData }) => {
+  const currentDate = new Date();
 
-    const currentDayOfMonth = currentDate.getDate();
-    const currentMonth = currentDate.getMonth();
-    const currentYear = currentDate.getFullYear();
+  const currentDayOfMonth = currentDate.getDate();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
 
-    const dateString = currentYear + "-" + (currentMonth + 1) + "-" + currentDayOfMonth;
+  const dateString = currentYear + "-" + (currentMonth + 1) + "-" + currentDayOfMonth;
 
-    const investProcess = (vlad, clad, blad) => {
-        setInvestData({
-          idnum: currentUser?.idnum,
-          plan: vlad,
-          status: "Pending",
-          capital: clad,
-          date: new Date().toISOString(),
-          duration: blad,
-          paymentOption: "Bitcoin",
-          authStatus: "unseen",
-          admin: false,
-          roi: 0,
-          bonus: 0
-        });
-        setWidgetState({
-            state: true,
-            type: "invest",
-        })
-    }
+  const investProcess = (vlad, clad, blad) => {
+    setInvestData({
+      idnum: currentUser?.idnum,
+      plan: vlad,
+      status: "Pending",
+      capital: clad,
+      date: new Date().toISOString(),
+      duration: blad,
+      paymentOption: "Bitcoin",
+      authStatus: "unseen",
+      admin: false,
+      roi: 0,
+      bonus: 0
+    });
+    setWidgetState({
+      state: true,
+      type: "invest",
+    })
+  }
   return (
     <>
       <div className="gridAnalytics">
@@ -50,7 +50,7 @@ const DashboardSect = ({setWidgetState, currentUser, setInvestData}) => {
           <div className="unitPackage">
             <h3>SILVER</h3>
             <h4>
-              <span>$100</span> <br /> - <br /> <span>$900</span>
+              <span>$250</span> <br /> - <br /> <span>$900</span>
             </h4>
             <ul>
               <li>
@@ -64,7 +64,7 @@ const DashboardSect = ({setWidgetState, currentUser, setInvestData}) => {
                 <span>Get ROI and bonus in 2 Days</span>
               </li>
             </ul>
-            <button className="borderBtn" onClick={() => {investProcess("Silver", 100, 2)}}>
+            <button className="borderBtn" onClick={() => { investProcess("Silver", 250, 2) }}>
               Invest
             </button>
           </div>
@@ -91,7 +91,7 @@ const DashboardSect = ({setWidgetState, currentUser, setInvestData}) => {
                 <span>Access to 15 of our digital financial resources</span>
               </li>
             </ul>
-            <button className="fancyBtn" onClick={() => {investProcess("Diamond", 10000, 7)}}>
+            <button className="fancyBtn" onClick={() => { investProcess("Diamond", 10000, 7) }}>
               Get Rich
             </button>
           </div>
@@ -116,7 +116,7 @@ const DashboardSect = ({setWidgetState, currentUser, setInvestData}) => {
                 <span>Access to 5 of our digital financial resources</span>
               </li>
             </ul>
-            <button className="borderBtn" onClick={() => {investProcess("Gold", 1000, 5)}}>
+            <button className="borderBtn" onClick={() => { investProcess("Gold", 1000, 5) }}>
               Invest
             </button>
           </div>
